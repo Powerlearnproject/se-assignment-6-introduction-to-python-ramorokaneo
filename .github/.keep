@@ -1,0 +1,693 @@
+SE-Assignment-6
+Assignment: Introduction to Python
+
+1. What is Python, and what are some of its key features that make it popular among developers? Provide examples of use cases where Python is particularly effective.
+
+Python: A Versatile and Popular Programming Language
+
+Python, developed by Guido van Rossum and first released in 1991, has emerged as a highly favored programming language among developers worldwide. Its popularity is attributed to several key features that distinguish it in the realm of software development.
+
+Key Features:
+
+Simplicity and Readability: Python's syntax is designed for clarity and ease of understanding, often described as "executable pseudocode." This characteristic reduces the complexity of code, making it more maintainable and accessible to developers.
+
+Versatility and Ease of Learning: Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Its straightforward syntax and comprehensive standard library facilitate rapid development across diverse domains.
+
+Extensive Standard Library: Python boasts a rich standard library that provides modules and packages for various tasks such as data manipulation, network communication, and graphical user interface (GUI) development. This wealth of resources minimizes the need for developers to build functionalities from scratch.
+
+Community and Open Source Ecosystem: As an open-source language, Python benefits from a vibrant community of developers who contribute to its evolution. This ecosystem ensures continuous improvement and offers a plethora of third-party libraries and frameworks for specialized applications.
+
+Cross-Platform Compatibility: Python runs seamlessly on major operating systems including Windows, macOS, and Linux, ensuring portability and consistency across different environments.
+
+Use Cases:
+
+Web Development: Python's frameworks like Django and Flask simplify the creation of robust web applications, leveraging its efficiency and scalability.
+
+Data Analysis and Visualization: Libraries such as NumPy, Pandas, and Matplotlib empower Python for data manipulation, statistical analysis, and graphical representation, making it indispensable in data science workflows.
+
+Machine Learning and Artificial Intelligence: Python's extensive libraries like TensorFlow and PyTorch facilitate the development and deployment of machine learning models, driving advancements in AI research and applications.
+
+Automation and Scripting: Python's concise syntax and extensive library support make it ideal for writing scripts to automate tasks, enhancing productivity in administrative and operational workflows.
+
+Educational Purposes: Python's readability and gentle learning curve make it a preferred choice for teaching programming concepts in educational settings, from schools to advanced academic courses.
+
+2. Describe the steps to install Python on your operating system (Windows, macOS, or Linux). Include how to verify the installation and set up a virtual environment.
+
+Windows
+1. Download Python Installer:
+
+Visit the official Python website: python.org.
+Download the latest version of Python (preferably Python 3.x), and make sure to select the installer suitable for your system architecture (32-bit or 64-bit).
+2. Run the Installer:
+
+Once the download is complete, run the installer.
+Select the option "Add Python X.X to PATH" during installation to make Python accessible from the command line.
+3. Verify Installation:
+
+Open Command Prompt (cmd) or PowerShell.
+Type python --version or python3 --version and press Enter.
+This command should display the installed Python version.
+4. Setting up a Virtual Environment:
+
+Open Command Prompt or PowerShell.
+Install virtualenv if not already installed:
+Copy code
+pip install virtualenv
+Navigate to the directory where you want to create the virtual environment:
+bash
+Copy code
+cd path\to\desired\directory
+Create a virtual environment:
+Copy code
+virtualenv myenv
+Activate the virtual environment:
+Copy code
+myenv\Scripts\activate
+Now you are working within your virtual environment where you can install packages without affecting the system-wide Python installation.
+macOS
+1. Install Homebrew (optional but recommended):
+
+Open Terminal.
+Install Homebrew (if not already installed):
+bash
+Copy code
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+2. Install Python using Homebrew:
+
+Once Homebrew is installed, install Python:
+Copy code
+brew install python
+3. Verify Installation:
+
+Open Terminal.
+Type python3 --version.
+This command should display the installed Python version.
+4. Setting up a Virtual Environment:
+
+Open Terminal.
+Install virtualenv if not already installed:
+Copy code
+pip3 install virtualenv
+Navigate to the directory where you want to create the virtual environment:
+bash
+Copy code
+cd path/to/desired/directory
+Create a virtual environment:
+Copy code
+virtualenv myenv
+Activate the virtual environment:
+bash
+Copy code
+source myenv/bin/activate
+Now you are in your virtual environment where you can install packages without affecting the system-wide Python installation.
+Linux (Ubuntu/Debian)
+1. Install Python:
+
+Python usually comes pre-installed on most Linux distributions.
+To install Python 3 and pip (package installer for Python), open Terminal and run:
+sql
+Copy code
+sudo apt update
+sudo apt install python3 python3-pip
+2. Verify Installation:
+
+Open Terminal.
+Type python3 --version.
+This command should display the installed Python version.
+3. Setting up a Virtual Environment:
+
+Open Terminal.
+Install virtualenv if not already installed:
+Copy code
+pip3 install virtualenv
+Navigate to the directory where you want to create the virtual environment:
+bash
+Copy code
+cd path/to/desired/directory
+Create a virtual environment:
+Copy code
+virtualenv myenv
+Activate the virtual environment:
+bash
+Copy code
+source myenv/bin/activate
+Now you are in your virtual environment where you can install packages without affecting the system-wide Python installation.
+Verifying Virtual Environment:
+To verify that you are in the virtual environment:
+
+Check if (myenv) or similar prefix appears in your terminal prompt (Windows Command Prompt, PowerShell, macOS Terminal, or Linux Terminal).
+You can also check the location of the Python interpreter being used:
+bash
+Copy code
+which python
+This should point to a path within your virtual environment directory.
+Deactivating Virtual Environment:
+To deactivate the virtual environment and return to your system's default Python environment:
+
+Simply type deactivate in the terminal.
+
+3. Write a simple Python program that prints "Hello, World!" to the console. Explain the basic syntax elements used in the program.
+
+# Simple Python program to print "Hello, World!" to the console
+print("Hello, World!")
+Explanation of Basic Syntax Elements:
+Comments (#):
+
+Comments in Python start with the # symbol and are used to annotate code for clarity. They are ignored by the Python interpreter and are purely for human readers. In the program above, # Simple Python program to print "Hello, World!" to the console is a comment that describes the purpose of the program.
+print() Function:
+
+The print() function in Python is used to output data to the console (standard output).
+In the program, print("Hello, World!") is the statement that calls the print() function with the string "Hello, World!" as its argument. The string "Hello, World!" is enclosed in double quotes ("), which is how strings are denoted in Python. The print() function then displays this string as output.
+Execution:
+When you run this Python program, it will execute the print("Hello, World!") statement.
+The output "Hello, World!" will be printed to the console.
+Key Points:
+Python uses indentation to define block structure (such as for loops, conditionals, and functions), but in this simple program, indentation is not required beyond standard code readability practices.
+Strings in Python can be enclosed in either single quotes (') or double quotes ("), as long as the start and end quote characters match.
+The print() function automatically adds a newline character after printing its argument(s), so each subsequent print() call will start on a new line unless specified otherwise.
+
+4. List and describe the basic data types in Python. Write a short script that demonstrates how to create and use variables of different data types.
+
+Basic Data Types in Python:
+Integer (int):
+
+Represents whole numbers, positive or negative, without any decimal point.
+Example: 10, -5, 0.
+Float (float):
+
+Represents real numbers, with a decimal point.
+Example: 3.14, 2.71828, -0.5.
+Boolean (bool):
+
+Represents a Boolean value, which can be either True or False.
+Used in conditional and logical operations.
+Example: True, False.
+String (str):
+
+Represents a sequence of characters enclosed within single quotes ' or double quotes ".
+Example: "Hello", 'Python', "123".
+List:
+
+Represents an ordered collection of items, which can be of different types.
+Lists are mutable, meaning their elements can be changed after creation.
+Example: [1, 2, 3, 4], ['apple', 'banana', 'cherry'].
+Tuple:
+
+Similar to lists but immutable (cannot be changed after creation).
+Tuples are typically used for heterogeneous data elements.
+Example: (1, 2, 3), ('apple', 'banana', 'cherry').
+Dictionary (dict):
+
+Represents a collection of key-value pairs.
+Keys are unique within a dictionary, and they are used to access values.
+Example: {'name': 'John', 'age': 30, 'city': 'New York'}.
+Example Script Demonstrating Usage:
+python
+Copy code
+# Define variables of different data types
+integer_var = 10
+float_var = 3.14
+boolean_var = True
+string_var = "Hello, Python!"
+list_var = [1, 2, 3, 4, 5]
+tuple_var = ('apple', 'banana', 'cherry')
+dictionary_var = {'name': 'Alice', 'age': 25, 'city': 'London'}
+
+# Print the variables and their types
+print("Integer variable:", integer_var, "| Type:", type(integer_var))
+print("Float variable:", float_var, "| Type:", type(float_var))
+print("Boolean variable:", boolean_var, "| Type:", type(boolean_var))
+print("String variable:", string_var, "| Type:", type(string_var))
+print("List variable:", list_var, "| Type:", type(list_var))
+print("Tuple variable:", tuple_var, "| Type:", type(tuple_var))
+print("Dictionary variable:", dictionary_var, "| Type:", type(dictionary_var))
+Output Explanation:
+Each variable (integer_var, float_var, boolean_var, etc.) is defined with a value corresponding to its respective data type.
+The type() function is used to retrieve and print the type of each variable.
+The output will display each variable's value followed by its type, confirming the data type of each variable.
+Expected Output:
+python
+Copy code
+Integer variable: 10 | Type: <class 'int'>
+Float variable: 3.14 | Type: <class 'float'>
+Boolean variable: True | Type: <class 'bool'>
+String variable: Hello, Python! | Type: <class 'str'>
+List variable: [1, 2, 3, 4, 5] | Type: <class 'list'>
+Tuple variable: ('apple', 'banana', 'cherry') | Type: <class 'tuple'>
+Dictionary variable: {'name': 'Alice', 'age': 25, 'city': 'London'} | Type: <class 'dict'>
+
+5. Explain the use of conditional statements and loops in Python. Provide examples of an `if-else` statement and a `for` loop.
+
+Conditional statements and loops are fundamental constructs in Python (and in programming in general) that allow you to control the flow of execution based on certain conditions and to repeat actions multiple times, respectively.
+
+Conditional Statements (if-else Statement):
+Conditional statements in Python allow you to make decisions based on conditions. The basic syntax includes if, elif (else if), and else clauses.
+
+Example of if-else statement:
+
+python
+Copy code
+# Example of an if-else statement
+x = 10
+
+if x > 0:
+    print("x is positive")
+elif x < 0:
+    print("x is negative")
+else:
+    print("x is zero")
+Explanation:
+
+In this example, x is assigned the value 10.
+The if statement checks if x is greater than 0. If true, it prints "x is positive".
+If the if condition is false, the elif (else if) condition x < 0 is checked. If true, it prints "x is negative".
+If both the if and elif conditions are false, the else block executes, printing "x is zero".
+Loops (for Loop):
+Loops in Python are used to execute a block of code repeatedly. The for loop is typically used when you know how many times you want to execute the loop.
+
+Example of a for loop:
+
+python
+Copy code
+# Example of a for loop
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+Explanation:
+
+In this example, fruits is a list containing "apple", "banana", and "cherry".
+The for loop iterates over each item (fruit) in the fruits list.
+During each iteration, the current item (fruit) is printed using the print() function.
+Key Points:
+Conditional Statements: Use if, elif, and else to perform different actions based on conditions. It allows your program to make decisions dynamically during execution.
+
+Loops: Use for loops to iterate over sequences like lists, tuples, or strings. The loop continues until all items in the sequence have been processed.
+
+Indentation: Both conditional statements and loops in Python use indentation to define blocks of code. This is crucial for readability and is enforced by the language syntax.
+
+Flow Control: Conditional statements and loops provide powerful mechanisms to control the flow of your program, making it possible to handle varying conditions and repetitive tasks efficiently.
+
+6. What are functions in Python, and why are they useful? Write a Python function that takes two arguments and returns their sum. Include an example of how to call this function.
+
+Functions in Python are blocks of organized, reusable code that perform a specific task. They provide modularity and abstraction by allowing you to break down your program into smaller, manageable pieces. Functions enhance code readability, promote code reuse, and facilitate easier debugging and maintenance.
+
+Characteristics of Functions in Python:
+Definition: Functions are defined using the def keyword followed by the function name and parentheses ( ) containing optional parameters.
+
+Parameters: Functions can accept input parameters (arguments) that are passed when the function is called.
+
+Return Value: Functions can optionally return a value using the return statement. If no return statement is provided, the function returns None by default.
+
+Scope: Functions have their own local scope, meaning variables defined within a function are local to that function unless specified otherwise.
+
+Example of a Python Function:
+Here's an example of a simple Python function that takes two arguments (a and b) and returns their sum:
+
+python
+Copy code
+# Define a function to calculate the sum of two numbers
+def sum_numbers(a, b):
+    return a + b
+Explanation:
+
+def sum_numbers(a, b): defines a function named sum_numbers that accepts two parameters a and b.
+return a + b calculates the sum of a and b and returns the result to the caller.
+Calling the Function:
+To call the sum_numbers function and use it:
+
+python
+Copy code
+# Call the sum_numbers function with arguments 5 and 3
+result = sum_numbers(5, 3)
+
+# Print the result
+print("Sum:", result)
+Output:
+
+makefile
+Copy code
+Sum: 8
+Explanation of Calling the Function:
+
+sum_numbers(5, 3) calls the sum_numbers function with arguments 5 and 3.
+The function computes the sum (5 + 3), which evaluates to 8.
+The returned value (8) is stored in the variable result.
+print("Sum:", result) prints the result "Sum: 8" to the console.
+Benefits of Using Functions:
+Code Reusability: Functions allow you to define a block of code once and reuse it multiple times throughout your program.
+
+Modularity: By breaking down your program into functions, each function handles a specific task, making the overall program easier to understand and maintain.
+
+Abstraction: Functions provide an abstraction layer, hiding the implementation details and focusing on what the function does rather than how it does it.
+
+Readability: Well-named functions improve code readability by encapsulating complex operations behind descriptive function names.
+
+7. Describe the differences between lists and dictionaries in Python. Write a script that creates a list of numbers and a dictionary with some key-value pairs, then demonstrates basic operations on both.
+
+Lists:
+Definition: Lists are ordered collections of items, where each item is identified by an index starting from 0.
+Mutability: Lists are mutable, meaning you can change, add, or remove elements after creation.
+Elements: List elements can be of any data type (e.g., integers, strings, other lists).
+Access: Elements are accessed using indices.
+Syntax: Lists are denoted by square brackets [].
+Dictionaries:
+Definition: Dictionaries are unordered collections of key-value pairs.
+Mutability: Dictionaries are mutable like lists.
+Keys: Keys are unique within a dictionary and are used to access the corresponding values.
+Elements: Values in dictionaries can be of any data type, while keys are typically strings or integers.
+Access: Elements are accessed using keys rather than indices.
+Syntax: Dictionaries are denoted by curly braces {} with key-value pairs separated by commas (:) and keys and values separated by colons.
+Example Script Demonstrating Operations:
+python
+Copy code
+# Create a list of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Create a dictionary with key-value pairs
+person = {
+    'name': 'John',
+    'age': 30,
+    'city': 'New York'
+}
+
+# Print the list and dictionary
+print("List of numbers:", numbers)
+print("Dictionary:", person)
+
+# Accessing elements in the list
+print("\nAccessing elements in the list:")
+print("First number:", numbers[0])
+print("Second number:", numbers[1])
+
+# Accessing elements in the dictionary
+print("\nAccessing elements in the dictionary:")
+print("Name:", person['name'])
+print("Age:", person['age'])
+print("City:", person['city'])
+
+# Modifying elements in the list
+print("\nModifying elements in the list:")
+numbers[0] = 10
+print("Updated list:", numbers)
+
+# Modifying elements in the dictionary
+print("\nModifying elements in the dictionary:")
+person['city'] = 'San Francisco'
+print("Updated dictionary:", person)
+
+# Adding elements to the list
+print("\nAdding elements to the list:")
+numbers.append(6)
+print("List after adding element:", numbers)
+
+# Adding elements to the dictionary
+print("\nAdding elements to the dictionary:")
+person['country'] = 'USA'
+print("Dictionary after adding element:", person)
+
+# Removing elements from the list
+print("\nRemoving elements from the list:")
+removed_element = numbers.pop(2)
+print("List after removing element at index 2:", numbers)
+print("Removed element:", removed_element)
+
+# Removing elements from the dictionary
+print("\nRemoving elements from the dictionary:")
+del person['age']
+print("Dictionary after removing 'age' key:", person)
+Explanation of the Script:
+Creating Lists and Dictionaries: numbers is a list containing integers, while person is a dictionary containing information about a person (name, age, city).
+
+Printing: The script prints the entire list (numbers) and dictionary (person).
+
+Accessing Elements: Shows how to access elements in both lists (by index) and dictionaries (by key).
+
+Modifying Elements: Demonstrates how to modify elements in lists (numbers[0] = 10) and dictionaries (person['city'] = 'San Francisco').
+
+Adding Elements: Adds elements to the end of the list (numbers.append(6)) and adds a new key-value pair to the dictionary (person['country'] = 'USA').
+
+Removing Elements: Removes elements from the list (numbers.pop(2)) and deletes a key-value pair from the dictionary (del person['age']).
+
+Expected Output:
+yaml
+Copy code
+List of numbers: [1, 2, 3, 4, 5]
+Dictionary: {'name': 'John', 'age': 30, 'city': 'New York'}
+
+Accessing elements in the list:
+First number: 1
+Second number: 2
+
+Accessing elements in the dictionary:
+Name: John
+Age: 30
+City: New York
+
+Modifying elements in the list:
+Updated list: [10, 2, 3, 4, 5]
+
+Modifying elements in the dictionary:
+Updated dictionary: {'name': 'John', 'age': 30, 'city': 'San Francisco'}
+
+Adding elements to the list:
+List after adding element: [10, 2, 3, 4, 5, 6]
+
+Adding elements to the dictionary:
+Dictionary after adding element: {'name': 'John', 'age': 30, 'city': 'San Francisco', 'country': 'USA'}
+
+Removing elements from the list:
+List after removing element at index 2: [10, 2, 4, 5, 6]
+Removed element: 3
+
+Removing elements from the dictionary:
+Dictionary after removing 'age' key: {'name': 'John', 'city': 'San Francisco', 'country': 'USA'}
+This script illustrates the differences between lists and dictionaries in Python and demonstrates various operations that can be performed on each data structure. Lists are suitable for ordered collections of items accessed by index, while dictionaries excel at storing key-value pairs for efficient lookup by key.
+
+8. What is exception handling in Python? Provide an example of how to use `try`, `except`, and `finally` blocks to handle errors in a Python script.
+
+Exception handling in Python refers to the process of anticipating and handling errors that may occur during the execution of a program. Errors that occur during program execution are called exceptions, and Python provides mechanisms to catch and deal with these exceptions gracefully, rather than letting the program crash.
+
+Components of Exception Handling:
+try block: This is the block of code where you anticipate an exception might occur. You place the code that might raise an exception inside this block.
+
+except block: If an exception occurs in the try block, Python jumps to the corresponding except block. Here, you specify what to do in response to the raised exception. You can have multiple except blocks to handle different types of exceptions.
+
+finally block: This optional block of code is used to execute cleanup code, regardless of whether an exception occurred or not. It ensures that certain operations (e.g., closing a file, releasing resources) are always executed, even if an exception was raised.
+
+Example of Using try, except, and finally:
+python
+Copy code
+# Example of exception handling in Python
+
+try:
+    # Attempt to open a file that does not exist (causing an IOError)
+    file = open('nonexistent.txt', 'r')
+    content = file.read()
+    file.close()
+
+    # Attempt to perform division by zero (causing a ZeroDivisionError)
+    result = 10 / 0
+
+except IOError:
+    print("Error: File not found or cannot be opened.")
+
+except ZeroDivisionError:
+    print("Error: Division by zero.")
+
+finally:
+    print("Cleaning up resources.")
+    # Optional: Close any resources opened in the try block
+    # (though file is not opened successfully here, this is for example)
+    try:
+        file.close()
+    except NameError:
+        pass  # file is not defined if the file opening fails
+
+print("End of program.")
+Explanation of the Example:
+try Block: The code inside the try block attempts to open a file ('nonexistent.txt') for reading. This operation may raise an IOError if the file does not exist or cannot be opened.
+
+except Blocks:
+
+The first except IOError block catches and handles the IOError exception. It prints an error message indicating the file could not be found or opened.
+The second except ZeroDivisionError block catches and handles a ZeroDivisionError that would occur if attempting to divide by zero (10 / 0).
+finally Block:
+
+The finally block is executed no matter whether an exception occurred or not. It ensures that the resources are cleaned up properly.
+In this example, it prints "Cleaning up resources." and attempts to close the file opened in the try block (even though the file opening failed).
+Execution Flow: If an exception is raised in the try block, Python jumps to the appropriate except block. After executing the except block (if applicable), it proceeds to execute the finally block. If no exception occurs in the try block, the except block is skipped, and Python directly executes the finally block.
+
+End of Program: The script concludes by printing "End of program." after all blocks (try, except, and finally) have been executed.
+
+Expected Output:
+mathematica
+Copy code
+Error: File not found or cannot be opened.
+Cleaning up resources.
+End of program.
+
+9. Explain the concepts of modules and packages in Python. How can you import and use a module in your script? Provide an example using the `math` module.
+
+In Python, modules and packages are mechanisms for organizing and reusing code. They help in creating modular programs where related functions and classes are grouped together, promoting code readability, maintainability, and reusability.
+
+Modules:
+A module in Python is a file containing Python definitions, statements, and functions. It can also include runnable code. Modules allow you to logically organize your Python code into separate files, making it easier to manage and maintain.
+
+Creating a Module: Any Python file can be used as a module simply by saving it with a .py extension. The filename becomes the module name (excluding the .py extension).
+
+Using Modules: To use the definitions inside a module, you need to import it into your script using the import statement.
+
+Packages:
+A package in Python is a collection of modules. It is a directory containing Python modules and a special __init__.py file (which can be empty). Packages provide a hierarchical module namespace, allowing similar modules to be grouped together.
+
+Creating a Package: To create a package, you create a directory with a __init__.py file inside it. You can then create Python modules inside this directory.
+
+Using Packages: Packages are imported similarly to modules, using the import statement. You can import specific modules from a package or import the entire package.
+
+Example Using the math Module:
+The math module in Python provides mathematical functions and constants. Here's how you can import and use the math module in your script:
+
+python
+Copy code
+# Example of importing and using the math module
+
+# Import the math module
+import math
+
+# Calculate the square root of a number
+num = 16
+square_root = math.sqrt(num)
+print(f"Square root of {num}:", square_root)
+
+# Calculate the factorial of a number
+fact_num = 5
+factorial = math.factorial(fact_num)
+print(f"Factorial of {fact_num}:", factorial)
+
+# Calculate the cosine of an angle in radians
+angle_rad = math.radians(45)
+cosine_value = math.cos(angle_rad)
+print(f"Cosine of 45 degrees:", cosine_value)
+Explanation:
+
+import math: This statement imports the entire math module into your script, making all its functions and constants available.
+
+math.sqrt(num): Uses the sqrt() function from the math module to calculate the square root of 16.
+
+math.factorial(fact_num): Uses the factorial() function from the math module to calculate the factorial of 5.
+
+math.radians(45): Converts 45 degrees to radians using the radians() function from the math module.
+
+math.cos(angle_rad): Calculates the cosine of the angle (converted to radians) using the cos() function from the math module.
+
+Output:
+yaml
+Copy code
+Square root of 16: 4.0
+Factorial of 5: 120
+Cosine of 45 degrees: 0.7071067811865476
+
+10. How do you read from and write to files in Python? Write a script that reads the content of a file and prints it to the console, and another script that writes a list of strings to a file.
+
+Reading from a File:
+To read from a file in Python, you typically follow these steps:
+
+Open the File: Use the open() function with the file path and mode ('r' for reading).
+Read the Content: Use methods like read(), readline(), or readlines() to read the content of the file.
+Close the File: Always close the file using the close() method to free up system resources.
+Here's an example script that reads the content of a file and prints it to the console:
+
+python
+Copy code
+# Example: Reading from a file and printing its content
+
+# Define the file path
+file_path = 'sample.txt'
+
+try:
+    # Open the file in read mode
+    file = open(file_path, 'r')
+
+    # Read and print the entire content of the file
+    file_content = file.read()
+    print("Content of the file:")
+    print(file_content)
+
+except FileNotFoundError:
+    print(f"Error: The file '{file_path}' does not exist.")
+
+finally:
+    # Close the file (to release system resources)
+    if file:
+        file.close()
+Writing to a File:
+To write to a file in Python, you typically follow these steps:
+
+Open the File: Use the open() function with the file path and mode ('w' for writing). If the file does not exist, it will be created. Use 'a' mode to append to an existing file.
+Write Content: Use the write() method to write data to the file.
+Close the File: Always close the file using the close() method to ensure all data is written properly and to free up system resources.
+Here's an example script that writes a list of strings to a file:
+
+python
+Copy code
+# Example: Writing to a file
+
+# Define the file path
+output_file = 'output.txt'
+
+# Define a list of strings
+lines_to_write = [
+    "This is line 1\n",
+    "This is line 2\n",
+    "This is line 3\n"
+]
+
+try:
+    # Open the file in write mode
+    with open(output_file, 'w') as file:
+        # Write each line from the list to the file
+        for line in lines_to_write:
+            file.write(line)
+
+    print(f"Successfully wrote {len(lines_to_write)} lines to '{output_file}'.")
+
+except IOError:
+    print(f"Error: Failed to write to file '{output_file}'.")
+
+Explanation of the Scripts:
+Reading Script:
+
+Uses open(file_path, 'r') to open the file sample.txt in read mode.
+Uses file.read() to read the entire content of the file into file_content.
+Prints the content of the file to the console.
+Handles the FileNotFoundError if the specified file does not exist.
+Uses finally to ensure the file is closed, even if an exception occurs.
+Writing Script:
+
+Defines a list lines_to_write containing strings that will be written to the file output.txt.
+Uses open(output_file, 'w') to open the file output.txt in write mode.
+Uses a for loop to iterate through lines_to_write and writes each line to the file using file.write(line).
+Prints a success message if writing is successful.
+Uses with statement to automatically close the file after writing is complete, ensuring proper handling of resources.
+Expected Output:
+For the reading script, if sample.txt contains:
+
+kotlin
+Copy code
+Hello, this is line 1.
+This is line 2.
+Output:
+
+kotlin
+Copy code
+Content of the file:
+Hello, this is line 1.
+This is line 2.
+For the writing script, it will create (or overwrite) output.txt with the contents:
+
+arduino
+Copy code
+This is line 1
+This is line 2
+This is line 3
